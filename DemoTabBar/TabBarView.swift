@@ -9,35 +9,35 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State private var selection = 0
- 
-    var body: some View {
-        TabbedView(selection: $selection){
-            ExpensesListView(expenses: Expense.fixedEntries)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "list.number.rtl")
-                        Text("Expenses")
-                    }
-            }
-            .tag(0)
-            Text("Second View")
-                .font(.title)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "chart.bar.fill")
-                        Text("Reports")
-                    }
-            }
-            .tag(1)
-        }
+  @State private var selection = 0
+
+  var body: some View {
+    TabbedView(selection: $selection){
+      ExpensesListView(Data.fixedEntries)
+        .tabItem {
+          VStack {
+            Image(systemName: "list.number.rtl")
+            Text("Expenses")
+          }
+      }
+      .tag(0)
+      Text("Second View")
+        .font(.title)
+        .tabItem {
+          VStack {
+            Image(systemName: "chart.bar.fill")
+            Text("Reports")
+          }
+      }
+      .tag(1)
     }
+  }
 }
 
 #if DEBUG
 struct TabBarView_Previews: PreviewProvider {
-    static var previews: some View {
-        TabBarView()
-    }
+  static var previews: some View {
+    TabBarView()
+  }
 }
 #endif

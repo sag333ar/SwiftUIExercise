@@ -8,21 +8,29 @@
 
 import SwiftUI
 
+// View Model
+extension Expense: Identifiable {
+  var view: some View {
+    return ExpenseCell(expense: self)
+  }
+}
+
+// View
 struct ExpenseCell: View {
-    let expense: Expense
-    var body: some View {
-        HStack {
-            Text(expense.title)
-            Spacer()
-            Text(String(format: "%.2f", expense.amount))
-        }
+  let expense: Expense
+  var body: some View {
+    HStack {
+      Text(expense.title)
+      Spacer()
+      Text(expense.amount.inCurrency)
     }
+  }
 }
 
 #if DEBUG
 struct ExpenseCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpenseCell(expense: Expense(id: 1, amount: 60, date: Date(), title: "Swiggy Order", account: "Personal", wallet: "Sodexo", category: "Food", tags: ["Home", "Outside Food"], location: "Swiggy"))
-    }
+  static var previews: some View {
+    ExpenseCell(expense: Expense(id: 1, amount: 60, title: "Swiggy Order", account: "Personal", wallet: "Sodexo", category: "Food", tags: ["Home", "Outside Food"], location: "Swiggy"))
+  }
 }
 #endif

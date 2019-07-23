@@ -16,6 +16,12 @@
 		1B0C492122E6961D002A504B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492022E6961D002A504B /* TabBarView.swift */; };
 		1B0C492622E6978E002A504B /* ExpensesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492522E6978E002A504B /* ExpensesListView.swift */; };
 		1B0C492822E697A5002A504B /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492722E697A5002A504B /* ExpenseCell.swift */; };
+		1B0C492A22E6A342002A504B /* ExpenseGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492922E6A342002A504B /* ExpenseGroupHeaderView.swift */; };
+		1B0C492C22E6A3D7002A504B /* ExpenseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492B22E6A3D7002A504B /* ExpenseGroup.swift */; };
+		1B0C493022E6A439002A504B /* RandomDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C492F22E6A439002A504B /* RandomDates.swift */; };
+		1B0C493222E6A44F002A504B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493122E6A44F002A504B /* Data.swift */; };
+		1B0C493422E6A4D0002A504B /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493322E6A4D0002A504B /* Double+Currency.swift */; };
+		1B0C493622E6A714002A504B /* Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493522E6A714002A504B /* Unique.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		1B0C492022E6961D002A504B /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1B0C492522E6978E002A504B /* ExpensesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesListView.swift; sourceTree = "<group>"; };
 		1B0C492722E697A5002A504B /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		1B0C492922E6A342002A504B /* ExpenseGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseGroupHeaderView.swift; sourceTree = "<group>"; };
+		1B0C492B22E6A3D7002A504B /* ExpenseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseGroup.swift; sourceTree = "<group>"; };
+		1B0C492F22E6A439002A504B /* RandomDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomDates.swift; sourceTree = "<group>"; };
+		1B0C493122E6A44F002A504B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		1B0C493322E6A4D0002A504B /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
+		1B0C493522E6A714002A504B /* Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unique.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 		1B0C490422E69313002A504B /* DemoTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				1B0C492D22E6A422002A504B /* Utils */,
 				1B0C491922E694D0002A504B /* Model */,
 				1B0C490522E69313002A504B /* AppDelegate.swift */,
 				1B0C490722E69313002A504B /* SceneDelegate.swift */,
@@ -87,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0C491A22E694DF002A504B /* Expense.swift */,
+				1B0C492B22E6A3D7002A504B /* ExpenseGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,9 +125,29 @@
 			isa = PBXGroup;
 			children = (
 				1B0C492522E6978E002A504B /* ExpensesListView.swift */,
+				1B0C492922E6A342002A504B /* ExpenseGroupHeaderView.swift */,
 				1B0C492722E697A5002A504B /* ExpenseCell.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		1B0C492D22E6A422002A504B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1B0C493522E6A714002A504B /* Unique.swift */,
+				1B0C492F22E6A439002A504B /* RandomDates.swift */,
+				1B0C493322E6A4D0002A504B /* Double+Currency.swift */,
+				1B0C492E22E6A427002A504B /* Data */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		1B0C492E22E6A427002A504B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1B0C493122E6A44F002A504B /* Data.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,10 +222,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0C491B22E694DF002A504B /* Expense.swift in Sources */,
+				1B0C493222E6A44F002A504B /* Data.swift in Sources */,
 				1B0C490622E69313002A504B /* AppDelegate.swift in Sources */,
+				1B0C492C22E6A3D7002A504B /* ExpenseGroup.swift in Sources */,
+				1B0C492A22E6A342002A504B /* ExpenseGroupHeaderView.swift in Sources */,
 				1B0C492122E6961D002A504B /* TabBarView.swift in Sources */,
 				1B0C490822E69313002A504B /* SceneDelegate.swift in Sources */,
+				1B0C493422E6A4D0002A504B /* Double+Currency.swift in Sources */,
+				1B0C493022E6A439002A504B /* RandomDates.swift in Sources */,
 				1B0C492822E697A5002A504B /* ExpenseCell.swift in Sources */,
+				1B0C493622E6A714002A504B /* Unique.swift in Sources */,
 				1B0C492622E6978E002A504B /* ExpensesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

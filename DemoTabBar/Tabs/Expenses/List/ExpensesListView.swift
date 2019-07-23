@@ -8,23 +8,70 @@
 
 import SwiftUI
 
-struct ExpensesListView: View {
-    var expenses: [Expense]
-    var body: some View {
-        NavigationView {
-            List(expenses) { expense in
-                ExpenseCell(expense: expense)
-            }
-            .listStyle(.grouped)
-            .navigationBarTitle("Expenses")
-        }
+// View Model
+
+extension ExpenseGroup: Identifiable {
+  var headerView: some View {
+    ExpenseGroupHeaderView(self)
+  }
+
+  var view: some View {
+    Section(header: headerView) {
+      ForEach(self.expenses) { expense in
+        expense.view
+      }
     }
+  }
+
+  static func groups(from expenses: [Expense]) -> [ExpenseGroup] {
+    let df = DateFormatter()
+    df.dateFormat = "yyyy/MM/dd"
+    let dates = expenses.compactMap { (expense) -> String? in
+      guard let date = expense.date else { return nil }
+      return df.string(from: date)
+    }.unique
+    var groups = [ExpenseGroup]()
+    dates.forEach { date in
+      let filteredExpenses = expenses.filter { (expense) -> Bool in
+        guard let expenseDate = expense.date else { return false }
+        return df.string(from: expenseDate) == date
+      }
+      let amount = filteredExpenses.reduce(0.0) { $0 + $1.amount }
+      groups.append(ExpenseGroup(id: date, amount: amount, expenses: filteredExpenses))
+    }
+    return groups
+  }
+}
+
+// View
+struct ExpensesListView: View {
+  var groups: [ExpenseGroup]
+
+  init(_ groups: [ExpenseGroup]) {
+    self.groups = groups
+  }
+
+  init(_ expenses: [Expense]) {
+    self.groups = ExpenseGroup.groups(from: expenses)
+  }
+
+  var body: some View {
+    NavigationView {
+      List {
+        ForEach(self.groups) { section in
+          section.view
+        }
+      }
+      .listStyle(.grouped)
+        .navigationBarTitle("Expenses")
+    }
+  }
 }
 
 #if DEBUG
 struct ExpensesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpensesListView(expenses: Expense.fixedEntries)
-    }
+  static var previews: some View {
+    ExpensesListView(Data.fixedEntries)
+  }
 }
 #endif
