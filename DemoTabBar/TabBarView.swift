@@ -8,37 +8,36 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TabBarView: View {
     @State private var selection = 0
  
     var body: some View {
         TabbedView(selection: $selection){
-            Text("First View")
-                .font(.title)
+            ExpensesListView(expenses: Expense.fixedEntries)
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Image(systemName: "list.number.rtl")
+                        Text("Expenses")
                     }
-                }
-                .tag(0)
+            }
+            .tag(0)
             Text("Second View")
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "chart.bar.fill")
+                        Text("Reports")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
         }
     }
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TabBarView()
     }
 }
 #endif
