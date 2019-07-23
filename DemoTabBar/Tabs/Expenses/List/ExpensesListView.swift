@@ -55,6 +55,10 @@ struct ExpensesListView: View {
     self.groups = ExpenseGroup.groups(from: expenses)
   }
 
+  var titleText: String {
+    self.groups.reduce(0.0) { $0 + $1.expenses.reduce(0.0) { $0 + $1.amount } }.inCurrency
+  }
+
   var body: some View {
     NavigationView {
       List {
@@ -63,7 +67,7 @@ struct ExpensesListView: View {
         }
       }
       .listStyle(.grouped)
-        .navigationBarTitle("Expenses")
+      .navigationBarTitle(self.titleText)
     }
   }
 }
