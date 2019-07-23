@@ -19,7 +19,10 @@ extension Expense: Identifiable {
 struct ExpenseCell: View {
   let expense: Expense
   var body: some View {
-    NavigationLink(destination: ExpenseDetailsView()) {
+    NavigationLink(destination: ExpenseDetailsView(
+      items: ExpenseDetailCellItem.items(from: self.expense),
+      title: self.expense.title)
+    ) {
       HStack {
         Text(expense.title)
         Spacer()
