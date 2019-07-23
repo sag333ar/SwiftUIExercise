@@ -12,7 +12,7 @@ import SwiftUI
 struct Expense {
   var id: Int
   let amount: Double
-  let date = RandomDates().get
+  let date: Date?
   let title: String
   let account: String?
   let wallet: String?

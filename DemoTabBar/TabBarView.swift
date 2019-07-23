@@ -13,7 +13,7 @@ struct TabBarView: View {
 
   var body: some View {
     TabbedView(selection: $selection){
-      ExpensesListView(Data.fixedEntries)
+      ExpensesListView(Data.groups)
         .tabItem {
           VStack {
             Image(systemName: "list.number.rtl")

@@ -45,14 +45,10 @@ extension ExpenseGroup: Identifiable {
 
 // View
 struct ExpensesListView: View {
-  var groups: [ExpenseGroup]
+  var groups: [ExpenseGroup] = []
 
   init(_ groups: [ExpenseGroup]) {
     self.groups = groups
-  }
-
-  init(_ expenses: [Expense]) {
-    self.groups = ExpenseGroup.groups(from: expenses)
   }
 
   var titleText: String {
@@ -67,7 +63,7 @@ struct ExpensesListView: View {
         }
       }
       .listStyle(.grouped)
-      .navigationBarTitle(self.titleText)
+        .navigationBarTitle(self.titleText)
     }
   }
 }
@@ -75,7 +71,7 @@ struct ExpensesListView: View {
 #if DEBUG
 struct ExpensesListView_Previews: PreviewProvider {
   static var previews: some View {
-    ExpensesListView(Data.fixedEntries)
+    ExpensesListView(Data.groups)
   }
 }
 #endif

@@ -22,6 +22,7 @@
 		1B0C493222E6A44F002A504B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493122E6A44F002A504B /* Data.swift */; };
 		1B0C493422E6A4D0002A504B /* Double+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493322E6A4D0002A504B /* Double+Currency.swift */; };
 		1B0C493622E6A714002A504B /* Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0C493522E6A714002A504B /* Unique.swift */; };
+		5363C3C522E6DA170012873B /* ExpenseDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5363C3C422E6DA170012873B /* ExpenseDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1B0C493122E6A44F002A504B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		1B0C493322E6A4D0002A504B /* Double+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Currency.swift"; sourceTree = "<group>"; };
 		1B0C493522E6A714002A504B /* Unique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unique.swift; sourceTree = "<group>"; };
+		5363C3C422E6DA170012873B /* ExpenseDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExpenseDetailsView.swift; path = ../../../../../../../../System/Volumes/Data/Users/sagarkothari/Projects/SwiftUIExercise/DemoTabBar/Tabs/Expenses/Details/ExpenseDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		1B0C492322E6976F002A504B /* Expenses */ = {
 			isa = PBXGroup;
 			children = (
+				5363C3C322E6D9FE0012873B /* Details */,
 				1B0C492422E69779002A504B /* List */,
 			);
 			path = Expenses;
@@ -148,6 +151,14 @@
 				1B0C493122E6A44F002A504B /* Data.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5363C3C322E6D9FE0012873B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				5363C3C422E6DA170012873B /* ExpenseDetailsView.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0C491B22E694DF002A504B /* Expense.swift in Sources */,
+				5363C3C522E6DA170012873B /* ExpenseDetailsView.swift in Sources */,
 				1B0C493222E6A44F002A504B /* Data.swift in Sources */,
 				1B0C490622E69313002A504B /* AppDelegate.swift in Sources */,
 				1B0C492C22E6A3D7002A504B /* ExpenseGroup.swift in Sources */,

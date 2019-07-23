@@ -19,10 +19,12 @@ extension Expense: Identifiable {
 struct ExpenseCell: View {
   let expense: Expense
   var body: some View {
-    HStack {
-      Text(expense.title)
-      Spacer()
-      Text(expense.amount.inCurrency)
+    NavigationLink(destination: ExpenseDetailsView()) {
+      HStack {
+        Text(expense.title)
+        Spacer()
+        Text(expense.amount.inCurrency)
+      }
     }
   }
 }
@@ -30,7 +32,7 @@ struct ExpenseCell: View {
 #if DEBUG
 struct ExpenseCell_Previews: PreviewProvider {
   static var previews: some View {
-    ExpenseCell(expense: Expense(id: 1, amount: 60, title: "Swiggy Order", account: "Personal", wallet: "Sodexo", category: "Food", tags: ["Home", "Outside Food"], location: "Swiggy"))
+    ExpenseCell(expense: Data.fixedEntries[0])
   }
 }
 #endif
